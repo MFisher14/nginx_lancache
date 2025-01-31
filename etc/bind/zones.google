@@ -1,0 +1,13 @@
+// Google Zones
+zone "dl.google.com" {
+	type master;
+	file "/etc/bind/db.root.domain";
+	allow-transfer { none; };
+};
+
+zone "gvt1.com" {
+	type master;
+	file "/etc/bind/db.wildcard.domain";
+	allow-transfer { none; };
+};
+

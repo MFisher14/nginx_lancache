@@ -1,0 +1,25 @@
+// Microsoft Zones
+zone "download.windowsupdate.com" {
+	type master;
+	file "/etc/bind/db.wildcard.root.domain";
+	allow-transfer { none; };
+};
+
+zone "tlu.dl.delivery.mp.microsoft.com" {
+	type master;
+	file "/etc/bind/db.wildcard.root.domain";
+	allow-transfer { none; };
+};
+
+zone "officecdn.microsoft.com" {
+	type master;
+	file "/etc/bind/db.root.domain";
+	allow-transfer { none; };
+};
+
+zone "officecdn.microsoft.com.edgesuite.net" {
+	type master;
+	file "/etc/bind/db.root.domain";
+	allow-transfer { none; };
+};
+

@@ -1,0 +1,19 @@
+// Adobe Zones
+zone "ardownload.adobe.com" {
+	type master;
+	file "/etc/bind/db.root.domain";
+	allow-transfer { none; };
+};
+
+zone "ccmdl.adobe.com" {
+	type master;
+	file "/etc/bind/db.root.domain";
+	allow-transfer { none; };
+};
+
+zone "agsupdate.adobe.com" {
+	type master;
+	file "/etc/bind/db.root.domain";
+	allow-transfer { none; };
+};
+
