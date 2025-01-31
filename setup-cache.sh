@@ -97,6 +97,11 @@ jobs:
 EOF
 
 # ======================================================================
+# Check if /etc/named/ folder exists
+if [ ! -d /etc/named ]; then
+    mkdir /etc/named
+fi
+
 # Check if /etc/named/intercept.zone exists
 if [ -f /etc/named/intercept.zone ]; then
     mv /etc/named/intercept.zone /etc/named/.intercept.zone.bak
@@ -123,7 +128,7 @@ if [ -f /etc/named.conf ]; then
     mv /etc/named.conf /etc/.named.conf.bak
 fi
 
-curl -FsSL $NAMED_CONF_URL > /etc/named.conf
+curl -fsSL -o /etc/named.conf $NAMED_CONF_URL
 
 # Check if /etc/bind/db.root.domain exists
 if [ -f /etc/bind/db.root.domain ]; then
@@ -338,3 +343,4 @@ if [ "$IPADDRESS" = "$DEFAULT_IPADDRESS" ]; then
     echo "/etc/named/intercept.zone"
     echo "/etc/bind/named.conf.options"
 fi
+
